@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interativo</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .quiz-step {
+      display: none;
+    }
+
+    .quiz-step.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+
+    .option {
+      background: #e6f0ff;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .option:hover {
+      background: #d0e7ff;
+    }
+
+    .option.correct {
+      border-color: green;
+      background: #d4edda;
+    }
+
+    .option.wrong {
+      border-color: red;
+      background: #f8d7da;
+    }
+
+    .button {
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 Quiz: Você sabe usar o app?</h1>
+
+    <div id="quiz">
+
+      <div class="quiz-step active" data-answer="1">
+        <h2>❓ O que você precisa antes de iniciar sua consulta?</h2>
+        <div class="option" data-value="1">📱 Internet e celular carregado</div>
+        <div class="option" data-value="2">🏥 Ir ao hospital</div>
+        <div class="option" data-value="3">💻 Ambiente sem internet</div>
+      </div>
+
+      <div class="quiz-step" data-answer="1">
+        <h2>🟢 Como você inicia a consulta no app?</h2>
+        <div class="option" data-value="1">▶️ Clicando no botão “Iniciar Consulta”</div>
+        <div class="option" data-value="2">🚪 Indo até a sala de espera</div>
+        <div class="option" data-value="3">📴 Desligando o celular</div>
+      </div>
+
+      <div class="quiz-step" data-answer="1">
+        <h2>🛠️ Se o app não funcionar, o que fazer?</h2>
+        <div class="option" data-value="1">🔁 Reiniciar o app ou pedir ajuda</div>
+        <div class="option" data-value="2">🏃‍♂️ Ir ao hospital</div>
+        <div class="option" data-value="3">⏰ Esperar remarcar automaticamente</div>
+      </div>
+
+      <div class="quiz-step" data-answer="1">
+        <h2>📷 Como verificar sem a camera está funcionando e em um ângulo bom?</h2>
+        <div class="option" data-value="1"> Abrir na camera frontal e centralizar ao rosto</div>
+        <div class="option" data-value="2"> Deixar a camera desligada</div>
+        <div class="option" data-value="3"> Abrir a camera e deixar virada para baixo </div>
+      </div>
+      
+      <button id="nextBtn" class="button">Próxima</button>
+
+      <div id="result" class="section" style="display:none;">
+        <h2>✅ Resultado</h2>
+        <p id="scoreText"></p>
+        <button id="retryBtn" class="button" style="display:none;">Refazer Quiz</button>
+        <a href="index.html" id="homeBtn" class="button" style="display:none;">Voltar à Página Inicial</a>
+      </div>
+      
+
+    </div>
+  </div>
+
+  <script>
+    const steps = document.querySelectorAll('.quiz-step');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentStep = 0;
+    let score = 0;
+
+    document.querySelectorAll('.option').forEach(option => {
+      option.addEventListener('click', function () {
+        const step = steps[currentStep];
+        const correct = step.dataset.answer;
+        const selected = this.dataset.value;
+
+        const options = step.querySelectorAll('.option');
+        options.forEach(opt => {
+          opt.classList.remove('correct', 'wrong');
+          opt.style.pointerEvents = 'none';
+          if (opt.dataset.value === correct) {
+            opt.classList.add('correct');
+          } else if (opt.dataset.value === selected) {
+            opt.classList.add('wrong');
+          }
+        });
+
+        if (selected === correct) {
+          score++;
+        }
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      steps[currentStep].classList.remove('active');
+      currentStep++;
+      if (currentStep < steps.length) {
+        steps[currentStep].classList.add('active');
+      } else {
+        nextBtn.style.display = 'none';
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('scoreText').innerText = `Você acertou ${score} de ${steps.length} perguntas.`;
+      }
+    });
+  </script>
+  <script src="scripts.js"></script>
+</body>
+</html>
