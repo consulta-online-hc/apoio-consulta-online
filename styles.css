@@ -1,0 +1,214 @@
+/* Reset e fonte básica */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+}
+
+/* Cabeçalho */
+.header {
+  background-color: #0066cc;
+  color: white;
+  padding: 20px 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.header nav {
+  margin-top: 10px;
+}
+
+.header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Conteúdo principal */
+.main-content {
+  padding: 40px 20px;
+}
+
+.intro h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+/* Rodapé */
+.footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* garante que tudo fique em coluna */
+  gap: 15px; /* espaço entre os elementos */
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  align-self: flex-start; /* alinha o botão à esquerda */
+}
+
+.contact-form button:hover {
+  background-color: #004c99;
+}
+.integrantes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.integrante {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.integrante img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.integrante h3 {
+  margin: 10px 0 5px;
+}
+
+.integrante a {
+  display: inline-block;
+  margin-top: 5px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.integrante a:hover {
+  text-decoration: underline;
+}
+/* Título do conteúdo principal */
+.main-content h2 {
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  color: #0066cc;
+}
+
+/* Estilo para a lista de perguntas frequentes */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Cada item do FAQ com sombra e fundo branco */
+.faq-list details {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título da pergunta */
+.faq-list summary {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #004c99;
+  cursor: pointer;
+}
+
+/* Resposta */
+.faq-list p {
+  margin-top: 10px;
+  line-height: 1.6;
+  color: #333;
+}
+.projeto-descricao {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-descricao p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.projeto-descricao ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.projeto-descricao ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato - Invox</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+  <h1 class="logo">Invox</h1>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="Integrantes.html">Quem Somos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="projeto.html">Projeto</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+
+  <main class="main-content">
+    <h2>Entre em Contato</h2>
+    <p>Preencha o formulário abaixo e entraremos em contato com você o mais breve possível.</p>
+
+    <form class="contact-form" action="#" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Invox. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
