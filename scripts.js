@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const botao = document.getElementById('btnEmpresa');
   const container = document.getElementById('infoEmpresa');
-  let visivel = false; // estado de visibilidade
+  let visivel = false;
 
   botao.addEventListener('click', function () {
     if (visivel) {
