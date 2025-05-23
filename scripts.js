@@ -1,75 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const steps = document.querySelectorAll('.quiz-step');
-    const nextBtn = document.getElementById('nextBtn');
-    const resultDiv = document.getElementById('result');
-    const scoreText = document.getElementById('scoreText');
-    const retryBtn = document.getElementById('retryBtn');
-    const homeBtn = document.getElementById('homeBtn');
+document.addEventListener('DOMContentLoaded', function () {
+  const botao = document.getElementById('btnEmpresa');
+  const container = document.getElementById('infoEmpresa');
+  let visivel = false; // estado de visibilidade
+
+  botao.addEventListener('click', function () {
+    if (visivel) {
+      
+      container.innerHTML = '';
+      container.style.display = 'none';
+      botao.textContent = 'Sobre a Invox';
+      visivel = false;
+    } else {
   
-    let currentStep = 0;
-    let score = 0;
-  
-    document.querySelectorAll('.option').forEach(option => {
-      option.addEventListener('click', function () {
-        const step = steps[currentStep];
-        const correct = step.dataset.answer;
-        const selected = this.dataset.value;
-  
-        const options = step.querySelectorAll('.option');
-        options.forEach(opt => {
-          opt.classList.remove('correct', 'wrong');
-          opt.style.pointerEvents = 'none';
-          if (opt.dataset.value === correct) {
-            opt.classList.add('correct');
-          } else if (opt.dataset.value === selected) {
-            opt.classList.add('wrong');
-          }
-        });
-  
-        if (selected === correct) {
-          score++;
-        }
-      });
-    });
-  
-    nextBtn.addEventListener('click', () => {
-      steps[currentStep].classList.remove('active');
-      currentStep++;
-      if (currentStep < steps.length) {
-        steps[currentStep].classList.add('active');
-      } else {
-        nextBtn.style.display = 'none';
-        resultDiv.style.display = 'block';
-  
-        if (score < 2) {
-          scoreText.innerText = `Você acertou ${score} de ${steps.length}. É melhor refazer o quiz.`;
-          retryBtn.style.display = 'inline-block';
-          homeBtn.style.display = 'none';
-        } else {
-          scoreText.innerText = `Parabéns! Você acertou ${score} de ${steps.length}. Pode usar o app!`;
-          retryBtn.style.display = 'none';
-          homeBtn.style.display = 'inline-block';
-        }
-      }
-    });
-  
-    retryBtn.addEventListener('click', () => {
-      currentStep = 0;
-      score = 0;
-      resultDiv.style.display = 'none';
-      nextBtn.style.display = 'inline-block';
-      retryBtn.style.display = 'none';
-      homeBtn.style.display = 'none';
-  
-      steps.forEach(step => {
-        step.classList.remove('active');
-        step.querySelectorAll('.option').forEach(opt => {
-          opt.classList.remove('correct', 'wrong');
-          opt.style.pointerEvents = 'auto';
-        });
-      });
-  
-      steps[0].classList.add('active');
-    });
+      container.innerHTML = '';
+      container.style.display = 'block';
+      botao.textContent = 'Fechar';
+      visivel = true;
+
+      const titulo = document.createElement('h2');
+      titulo.textContent = ' Sobre a Invox';
+      container.appendChild(titulo);
+
+      const paragrafo1 = document.createElement('p');
+      paragrafo1.textContent = 'A Invox é uma empresa dedicada ao desenvolvimento de software, com o objetivo de transformar desafios em soluções digitais eficientes, intuitivas e inovadoras. Nascemos da paixão por tecnologia e da vontade de impactar positivamente o dia a dia de pessoas e organizações por meio de sistemas inteligentes.';
+      container.appendChild(paragrafo1);
+
+      const paragrafo2 = document.createElement('p');
+      paragrafo2.textContent = 'Na Invox, criamos softwares sob medida, aplicativos, plataformas web e ferramentas personalizadas que atendem às necessidades reais de nossos clientes. Utilizamos as mais recentes tecnologias e metodologias ágeis para garantir entregas rápidas, seguras e de alta qualidade.';
+      container.appendChild(paragrafo2);
+
+      const paragrafo3 = document.createElement('p');
+      paragrafo3.textContent = 'Contamos com uma equipe multidisciplinar, criativa e comprometida, que trabalha lado a lado com cada cliente para entender seus objetivos e entregar muito mais do que apenas código: entregamos valor, eficiência e inovação.';
+      container.appendChild(paragrafo3);
+
+      const paragrafo4 = document.createElement('p');
+      paragrafo4.textContent = 'Seja para otimizar processos, lançar um novo produto digital ou modernizar sua empresa, a Invox está pronta para desenvolver a solução ideal para você.';
+      container.appendChild(paragrafo4);
+    }
   });
-  
+});

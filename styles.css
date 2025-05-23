@@ -1,4 +1,3 @@
-/* Reset e fonte básica */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -7,7 +6,7 @@ body {
   text-align: center;
 }
 
-/* Cabeçalho */
+
 .header {
   background-color: #0066cc;
   color: white;
@@ -34,7 +33,7 @@ body {
   text-decoration: underline;
 }
 
-/* Conteúdo principal */
+
 .main-content {
   padding: 40px 20px;
 }
@@ -76,8 +75,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column; /* garante que tudo fique em coluna */
-  gap: 15px; /* espaço entre os elementos */
+  flex-direction: column; 
+  gap: 15px; 
 }
 
 .contact-form label {
@@ -103,7 +102,7 @@ body {
   border-radius: 6px;
   font-size: 1em;
   cursor: pointer;
-  align-self: flex-start; /* alinha o botão à esquerda */
+  align-self: flex-start; 
 }
 
 .contact-form button:hover {
@@ -148,21 +147,21 @@ body {
 .integrante a:hover {
   text-decoration: underline;
 }
-/* Título do conteúdo principal */
+
 .main-content h2 {
   font-size: 2.2em;
   margin-bottom: 30px;
   color: #0066cc;
 }
 
-/* Estilo para a lista de perguntas frequentes */
+
 .faq-list {
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
 }
 
-/* Cada item do FAQ com sombra e fundo branco */
+
 .faq-list details {
   background-color: #fff;
   border-radius: 12px;
@@ -171,7 +170,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Título da pergunta */
+
 .faq-list summary {
   font-weight: bold;
   font-size: 1.1em;
@@ -179,7 +178,7 @@ body {
   cursor: pointer;
 }
 
-/* Resposta */
+
 .faq-list p {
   margin-top: 10px;
   line-height: 1.6;
@@ -210,5 +209,63 @@ body {
   margin-bottom: 10px;
   line-height: 1.5;
 }
+#btnEmpresa {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+#btnEmpresa:hover {
+  background-color: #3c096c;
+}
+
+.caixa-info {
+  background-color: #f8f7ff;
+  border: 2px solid #cdb4db;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+.benefits {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: nowrap; 
+}
+
+.benefit-box {
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+  min-width: 0; 
+}
+
+.benefit-box img {
+  height: 40px;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .benefits {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-box {
+    text-align: center;
+  }
+}
+
 
 
